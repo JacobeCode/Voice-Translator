@@ -1,0 +1,6 @@
+# Conda env files
+.conda
+# Rest of tm-clients
+.tm-clients
+# Cache files
+._pycache_
