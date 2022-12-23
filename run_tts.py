@@ -73,7 +73,7 @@ if __name__ == '__main__':
     sampling_rate = 44100
 
     address = ap.get("tts-pl")
-    input_text = "Ala ma kota i chciałaby zaliczyć Technologię Mowy w dwa tysiące dwudziestym drugim roku na ocenę 5.0"
+    input_text = "Test zmiany."
     tts_args_pl = tts_args(address, output_path="TTS_PL.wav")
     call_synthesize(tts_args_pl, input_text)  # wywołanie generuje plik wav z syntezowanym głosem
 
