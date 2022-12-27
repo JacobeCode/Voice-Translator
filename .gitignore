@@ -3,3 +3,6 @@
 # Cache files
 _pycache_
 .idea
+# Wav files from TTS
+TTS_PL.wav
+TTS_EN.wav
