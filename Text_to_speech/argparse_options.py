@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 from pathlib import Path
 
 
-def tts_args(address:str, input_text:str, output_path: [Path or str] = "TechmoTTS.wav"):
+def tts_args(address:str, input_text:str, voice_gender:str, output_path: [Path or str] = "TechmoTTS.wav"):
     parser = ArgumentParser()
     parser.add_argument("-s", "--service-address", dest="service", default=address,
                         help="An IP address and port (address:port) of a service the client connects to.", type=str)
@@ -46,7 +46,7 @@ def tts_args(address:str, input_text:str, output_path: [Path or str] = "TechmoTT
     parser.add_argument("--vn", "--voice-name", dest="voice_name", default="",
                         help="A name od the voice used to synthesize the phrase (optional, can be overriden by SSML).",
                         type=str)
-    parser.add_argument("--vg", "--voice-gender", dest="voice_gender", default="",
+    parser.add_argument("--vg", "--voice-gender", dest="voice_gender", default=voice_gender,
                         help="A gender of the voice - female or male (optional, can be overriden by SSML).", type=str)
     parser.add_argument("--va", "--voice-age", dest="voice_age", default="",
                         help="An age of the voice - adult, child, or senile (optional, can be overriden by SSML).",
