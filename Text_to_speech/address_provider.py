@@ -12,7 +12,7 @@ __date__ = "19.12.2022"
 class AddressProvider:
 
     def __init__(self):
-        with open('addresses.json', 'r') as jr:
+        with open('Text_to_speech/addresses.json', 'r') as jr:
             self.addresses = json.load(jr)
 
     def get(self, system_key):

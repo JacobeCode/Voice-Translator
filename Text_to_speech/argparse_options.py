@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from tts.call_synthesize import call_synthesize
 from argparse import ArgumentParser
-from address_provider import AddressProvider
 from pathlib import Path
 
 
-def tts_args(address:str, output_path: [Path or str] = "TechmoTTS.wav"):
+def tts_args(address:str, input_text:str, output_path: [Path or str] = "TechmoTTS.wav"):
     parser = ArgumentParser()
     parser.add_argument("-s", "--service-address", dest="service", default=address,
                         help="An IP address and port (address:port) of a service the client connects to.", type=str)
@@ -65,19 +63,3 @@ def tts_args(address:str, output_path: [Path or str] = "TechmoTTS.wav"):
     # Parse and validate options
     args = parser.parse_args()
     return args
-
-
-if __name__ == '__main__':
-    # Config:
-    ap = AddressProvider()
-    sampling_rate = 44100
-
-    address = ap.get("tts-pl")
-    input_text = "Test zmiany."
-    tts_args_pl = tts_args(address, output_path="TTS_PL.wav")
-    call_synthesize(tts_args_pl, input_text)  # wywołanie generuje plik wav z syntezowanym głosem
-
-    address = ap.get("tts-en")
-    input_text = "Ann has a cat and wants to finish Speech Technologies in 2022 with A."
-    tts_args_pl = tts_args(address,  output_path="TTS_EN.wav")
-    call_synthesize(tts_args_pl, input_text)  # wywołanie generuje plik wav z syntezowanym głosem
