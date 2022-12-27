@@ -1,4 +1,5 @@
 # Main file of project
-from Text_to_speech import synthesize
+from Text_to_speech.synthesize import synthesize
 
-synthesize()
+# Here you can insert the phrase you want to synthesize
+synthesize("")

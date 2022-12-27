@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from tts.call_synthesize import call_synthesize
 from argparse import ArgumentParser
-from address_provider import AddressProvider
 from pathlib import Path
 
 
