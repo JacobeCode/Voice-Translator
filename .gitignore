@@ -2,3 +2,4 @@
 .conda
 # Cache files
 _pycache_
+.idea
