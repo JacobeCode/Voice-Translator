@@ -3,6 +3,11 @@ channels:
   - defaults
 dependencies:
   - pip
+  - ffmpeg
+  - conda-forge xorg-libsm
+  - conda-forge xorg-libxext
+  - mesa-libgl-cos6-x86_64
+  - pyqt
+  - opencv
   - pip:
     - -r requirements.txt
-    - PyQt5

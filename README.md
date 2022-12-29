@@ -6,3 +6,5 @@ To try it out use `main.py` file. Simply insert your desired input in `synthesiz
 
 This is default version which returns at the moment only Polish phrases.
 Files in .wav format should be overwritten by new input.
+
+NOTE: pyqt5 install is required through Windows WSL sunbsystem to avoid errors.
