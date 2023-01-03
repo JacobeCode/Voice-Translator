@@ -4,7 +4,7 @@ from Text_to_speech.settings import setup
 import sys
 from PyQt5 import QtWidgets, uic
 
-from UI import UIPy_MainWindow
+import UIPy_MainWindow
 
 class MainWindow(QtWidgets.QMainWindow, UIPy_MainWindow.Ui_Voice_Translator):
     def __init__(self):
@@ -20,4 +20,4 @@ app.exec_()
 
 # Here you can insert the phrase you want to synthesize
 # settings = setup()
-# synthesize("Sprawdzenie na innym inpucie", settings)
+# synthesize("Nowe środowisko", settings)
