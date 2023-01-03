@@ -526,25 +526,5 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>SynthesizeButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Voice_Translator</receiver>
-   <slot>Synthesis()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>584</x>
-     <y>390</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>565</x>
-     <y>-15</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
- <slots>
-  <slot>Synthesis()</slot>
- </slots>
+ <connections/>
 </ui>

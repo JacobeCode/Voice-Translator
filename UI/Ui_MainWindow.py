@@ -193,7 +193,6 @@ class Ui_Voice_Translator(object):
         Voice_Translator.setStatusBar(self.statusbar)
 
         self.retranslateUi(Voice_Translator)
-        self.SynthesizeButton.clicked.connect(Voice_Translator.Synthesis) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Voice_Translator)
 
     def retranslateUi(self, Voice_Translator):
