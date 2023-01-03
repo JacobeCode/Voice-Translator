@@ -2,10 +2,10 @@
 from Text_to_speech.synthesize import synthesize
 from Text_to_speech.settings import setup
 import sys
-from PyQt5 import QtDesigner
+from UI import MainWindowPy
 from PyQt5 import QtWidgets, uic
 
-class MainWindow(QtWidgets.QMainWindow, MainWindow):
+class MainWindow(QtWidgets.QMainWindow, MainWindowPy):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)

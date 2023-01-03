@@ -10,3 +10,7 @@ Files in .wav format should be overwritten by new input.
 NOTE: pyqt5 install is required through Windows WSL sunbsystem to avoid errors.
 
 sudo apt-get install -y libxcb-util-dev
+ON cmd :
+pip install --upgrade google-api-python-client
+ON |Ubuntu:
+$ apt install -y protobuf-compiler
