@@ -5,8 +5,6 @@ import sys
 from UI import Ui_MainWindow
 from PyQt5 import QtWidgets, uic
 
-from UI import Ui_MainWindow
-
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow.Ui_Voice_Translator):
     def __init__(self):
         super(MainWindow, self).__init__()
