@@ -2,7 +2,7 @@
 from Text_to_speech.synthesize import synthesize
 from Text_to_speech.settings import setup
 import sys
-from UI import UiMainWindow
+from UI import Ui_MainWindow
 from PyQt5 import QtWidgets, uic
 
 from UI import Ui_MainWindow
