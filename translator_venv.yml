@@ -1,6 +1,7 @@
 name: Translator
 channels:
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - ca-certificates=2022.10.11=haa95532_0
