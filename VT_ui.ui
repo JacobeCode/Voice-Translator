@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>465</height>
+    <height>464</height>
    </rect>
   </property>
   <property name="cursor">
@@ -47,119 +47,89 @@
     <property name="flat">
      <bool>true</bool>
     </property>
-    <widget class="QCheckBox" name="FemaleCheckBox">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>50</y>
-       <width>70</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Female</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="MaleCheckBox">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>70</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Male</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="AgeComboBox">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>131</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Child</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Adult</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Senile</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="VoiceGender">
+    <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
        <width>151</width>
-       <height>21</height>
+       <height>261</height>
       </rect>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="text">
-      <string>Voice Gender</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="VoiceAge">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>151</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="text">
-      <string>Voice Age</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="VoiceName">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>150</y>
-       <width>151</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="text">
-      <string>Voice Name</string>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="VoiceGender">
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="text">
+         <string>Voice Gender</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="GenderComboBox">
+        <item>
+         <property name="text">
+          <string>Male</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Female</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="VoiceAge">
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="text">
+         <string>Voice Age</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="AgeComboBox">
+        <item>
+         <property name="text">
+          <string>Child</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Adult</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Senile</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="VoiceName">
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="text">
+         <string>Voice Name</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="SpeechSettings">
@@ -539,12 +509,183 @@
     </hint>
     <hint type="destinationlabel">
      <x>559</x>
-     <y>-12</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GenderComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>GenderPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AgeComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>AgePickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>-13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpeechPitchSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SpeedPitchPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>-2</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpeechRangeSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SpeechRatePickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>171</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpeechVolumeSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SpeechVolumePickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>224</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>-10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>FolderPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>429</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>446</x>
+     <y>-5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SamplingFreqPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>AudioEncodingPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>601</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>-19</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_2</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SynthesisTextChangeFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>192</x>
+     <y>-3</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LanguageComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>LanguagePickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>201</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
+     <y>-8</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>SynthesisFunction()</slot>
+  <slot>GenderPickFunction()</slot>
+  <slot>AgePickFunction()</slot>
+  <slot>SpeechPitchPickFunction()</slot>
+  <slot>SpeechRangePickFunction()</slot>
+  <slot>SpeechRatePickFunction()</slot>
+  <slot>SpeechVolumePickFunction()</slot>
+  <slot>FolderPickFunction()</slot>
+  <slot>SamplingFreqPickFunction()</slot>
+  <slot>AudioEncodingPickFunction()</slot>
+  <slot>SynthesisTextChangeFunction()</slot>
+  <slot>LanguagePickFunction()</slot>
  </slots>
 </ui>
