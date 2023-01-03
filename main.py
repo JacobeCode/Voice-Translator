@@ -21,3 +21,4 @@ app.exec_()
 # Here you can insert the phrase you want to synthesize
 # settings = setup()
 # synthesize("Nowe środowisko", settings)
+ 
