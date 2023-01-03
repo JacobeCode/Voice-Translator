@@ -8,3 +8,5 @@ This is default version which returns at the moment only Polish phrases.
 Files in .wav format should be overwritten by new input.
 
 NOTE: pyqt5 install is required through Windows WSL sunbsystem to avoid errors.
+
+sudo apt-get install -y libxcb-util-dev
