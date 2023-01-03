@@ -2,11 +2,14 @@
 from Text_to_speech.synthesize import synthesize
 from Text_to_speech.settings import setup
 import sys
+from UI import UiMainWindow
 from PyQt5 import QtWidgets, uic
 
-class MainWindow(QtWidgets.QMainWindow, MainWindowPy):
-    def __init__(self, *args, obj=None, **kwargs):
-        super(MainWindow, self).__init__(*args, **kwargs)
+from UI import Ui_MainWindow
+
+class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
         self.setupUi(self)
 
 
@@ -14,7 +17,7 @@ app = QtWidgets.QApplication(sys.argv)
 
 window = MainWindow()
 window.show()
-app.exec()
+app.exec_()
 
 # Here you can insert the phrase you want to synthesize
 # settings = setup()
