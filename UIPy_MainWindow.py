@@ -15,7 +15,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Voice_Translator(object):
     settings = setup()
     def SynthesisFunction(self):
-        synthesize("Test zmiany ustawień głosu", self.settings)
+        synthesize(self.settings)
     def GenderPickFunction(self):
         if str(self.GenderComboBox.currentText()) == "Male":
             self.settings.voice_gender = "male"
@@ -36,7 +36,7 @@ class Ui_Voice_Translator(object):
     def AudioEncodingPickFunction(self):
         pass
     def SynthesisTextChangeFunction(self):
-        pass
+        self.settings.text = self.lineEdit_2.text()
     def LanguagePickFunction(self):
         pass
     def setupUi(self, Voice_Translator):
