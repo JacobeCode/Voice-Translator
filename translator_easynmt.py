@@ -1,7 +1,7 @@
 from easynmt import EasyNMT
 
 opus=EasyNMT('opus-mt')
-mbart=EasyNMT('mbart50_en2m')
+mbart=EasyNMT('mbart50_en2m', device="cpu")
 
 directions_for_opus=[['pl','en'],['es','pl'],['pl','es'],['es','en'],['en','es']]
 for direction in directions_for_opus:
