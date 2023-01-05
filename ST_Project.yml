@@ -1,0 +1,18 @@
+name: ST_Project
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - pip
+  # - ffmpeg
+  # - conda-forge xorg-libsm
+  # - conda-forge xorg-libxext
+  # - mesa-libgl-cos6-x86_64
+  # - pyqt
+  # - opencv
+  # - grpcio==1.38.1
+  # - grpcio-tools==1.38.1
+  # - protobuf==3.18.1 # bump protobuf to 3.20 or higher
+  # - numpy==1.22.0
+  # - sounddevice==0.4.1
