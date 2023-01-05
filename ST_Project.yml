@@ -12,3 +12,5 @@ dependencies:
     - numpy==1.22.0
     - sounddevice==0.4.1
     - pyqt5==5.15.7
+    - sacremoses==0.0.53
+    - easynmt==2.0.2
