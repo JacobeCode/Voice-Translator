@@ -9,3 +9,4 @@ _pycache_
 # Logs from main and UI
 UI/logs
 logs
+*.pyc
