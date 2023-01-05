@@ -1,7 +1,7 @@
 import wave
 import struct
 import sys
-import Text_to_speech.techmo_tts_pb2 as techmo_tts_pb2
+import TTSTechmo.techmo_tts_pb2 as techmo_tts_pb2
 
 class AudioSaver:
     """Wave Saver for TTS"""

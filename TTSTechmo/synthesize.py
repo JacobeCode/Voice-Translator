@@ -1,6 +1,6 @@
-from Text_to_speech.argparse_options import tts_args
-from Text_to_speech.tts.call_synthesize import call_synthesize
-from Text_to_speech.address_provider import AddressProvider
+from TTSTechmo.argparse_options import tts_args
+from TTSTechmo.tts.call_synthesize import call_synthesize
+from TTSTechmo.address_provider import AddressProvider
 from pathlib import Path
 
 def synthesize(settings:object):

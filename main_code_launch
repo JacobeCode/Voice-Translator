@@ -1,7 +1,0 @@
-# Here is part without GUI - only with 'in-code' settings and synthesis
-
-from Text_to_speech.synthesize import synthesize
-from Text_to_speech.settings import setup
-
-settings = setup()
-synthesize("Taki szybki test", settings)

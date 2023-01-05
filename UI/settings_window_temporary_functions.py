@@ -1,5 +1,5 @@
-from Text_to_speech.synthesize import synthesize
-from Text_to_speech.settings import setup
+from TTSTechmo.synthesize import synthesize
+from TTSTechmo.settings import setup
 
 def SynthesisFunction(self):
     settings = setup()

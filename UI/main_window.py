@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Text_to_speech.synthesize import synthesize
-from Text_to_speech.settings import setup
+from TTSTechmo.synthesize import synthesize
+from TTSTechmo.settings import setup
 
 class Ui_main_window(object):
     settings = setup()
