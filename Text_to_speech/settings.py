@@ -8,7 +8,7 @@ class setup:
         self.response="streaming"
         self.text=""
         self.input_file=""
-        self.out_path="class_test_object_02.wav"
+        self.out_path="Records/test.wav"
         self.sample_rate=44100
         self.audio_encoding="pcm16"
         self.speech_pitch=1.0

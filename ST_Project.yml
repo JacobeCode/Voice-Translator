@@ -1,0 +1,14 @@
+name: ST_Project
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - pip
+  - pip:
+    - grpcio==1.38.1
+    - grpcio-tools==1.38.1
+    - protobuf==3.20.3 # used this version, but required is >=3.20
+    - numpy==1.22.0
+    - sounddevice==0.4.1
+    - pyqt5==5.15.7

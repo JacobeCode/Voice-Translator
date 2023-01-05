@@ -1,8 +1,12 @@
-# Conda env files
+# Conda environment files
 .conda
+
 # Cache files
+Text_to_speech/_pycache_
+UI/_pycache_
 _pycache_
-.idea
-# Wav files from TTS
-TTS_PL.wav
-TTS_EN.wav
+
+# Logs from main and UI
+UI/logs
+logs
+*.pyc
