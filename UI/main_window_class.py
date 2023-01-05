@@ -1,4 +1,4 @@
-import UIPy_MainWindow
+from UI import UIPy_MainWindow
 
 from PyQt5 import QtWidgets
 
