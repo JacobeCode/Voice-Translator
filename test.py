@@ -1,4 +1,4 @@
-from translator_easynmt import translate
+from EasyNMT.translator_easynmt import translate
 import time
 
 t = time.time()

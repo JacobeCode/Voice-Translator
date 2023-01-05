@@ -9,9 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from Text_to_speech.synthesize import synthesize
+from Text_to_speech.settings import setup
 
 class Ui_main_window(object):
+    settings = setup()
+    def SetInputText(self):
+        pass
+    def SetInputLanguage(self):
+        pass
+    def SetTranslationLanguage(self):
+        pass
+    def Translate(self):
+        pass
+    def TranslateAndSynthesize(self):
+        pass
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(1072, 881)

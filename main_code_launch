@@ -1,7 +1,7 @@
 # Here is part without GUI - only with 'in-code' settings and synthesis
 
-from TTS_Techmo.synthesize import synthesize
-from TTS_Techmo.settings import setup
+from Text_to_speech.synthesize import synthesize
+from Text_to_speech.settings import setup
 
 settings = setup()
 synthesize("Taki szybki test", settings)
