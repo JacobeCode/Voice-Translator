@@ -1,3 +1,11 @@
+# Conda environment files
 .conda
+
+# Cache files
+Text_to_speech/_pycache_
+UI/_pycache_
 _pycache_
+
+# Logs from main and UI
+UI/logs
 logs

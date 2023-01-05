@@ -11,6 +11,9 @@ This branch contains work-in-progress, WSL2-free TTS implementation with proper 
     - added conda-forge and anaconda channels
     - added pip dependencies for installing TTS requirements (deleted requirements.txt - now it is useless)
 - commented main.py file
+- splitted main.py into UI instance (first version) and code instance (second version)
+- set Records/test.wav as default
+- updated .gitignore
 
 UI works on PyQt5 library with design from QT Designer app.
 
