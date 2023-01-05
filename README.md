@@ -14,6 +14,8 @@ This branch contains work-in-progress, WSL2-free TTS implementation with proper 
 - splitted main.py into UI instance (first version) and code instance (second version)
 - set Records/test.wav as default
 - updated .gitignore
+- sorted main files and directiories
+- separated UI main and side window
 
 UI works on PyQt5 library with design from QT Designer app.
 
