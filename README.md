@@ -1,7 +1,12 @@
-### Voice_Translator
+# Voice_Translator
 ## This repository contains project created for Speech Technology classes with use of Techmo TSS.
 
 This branch contains work-in-progress, WSL2-free TTS implementation with proper instalation instructions and working YAML file for installing packages needed to run program. 
+
+### 1. Currently updated:
+- README.md file
+- YAML file change name to "ST_Project" for naming clarity:
+    - added conda-forge and anaconda channels
 
 ------
 This branch contains working Techmo TTS module applied to main.py file.
