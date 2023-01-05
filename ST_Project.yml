@@ -5,14 +5,10 @@ channels:
   - defaults
 dependencies:
   - pip
-  - grpcio==1.38.1
-  - grpcio-tools==1.38.1
-  - protobuf==3.21.0 # bump protobuf to 3.20 or higher
-  - numpy==1.22.0
-  - sounddevice==0.4.1
-  # - ffmpeg
-  # - conda-forge xorg-libsm
-  # - conda-forge xorg-libxext
-  # - mesa-libgl-cos6-x86_64
-  # - pyqt
-  # - opencv
+  - pip:
+    - grpcio==1.38.1
+    - grpcio-tools==1.38.1
+    - protobuf==3.20.3 # used this version, but required is >=3.20
+    - numpy==1.22.0
+    - sounddevice==0.4.1
+    - pyqt5==5.15.7

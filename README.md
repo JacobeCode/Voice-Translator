@@ -3,10 +3,23 @@
 
 This branch contains work-in-progress, WSL2-free TTS implementation with proper instalation instructions and working YAML file for installing packages needed to run program. 
 
-### 1. Currently updated:
+## Work in progress changes:
+
+# 1. Currently updated:
 - README.md file
 - YAML file change name to "ST_Project" for naming clarity:
     - added conda-forge and anaconda channels
+    - added pip dependencies for installing TTS requirements (deleted requirements.txt - now it is useless)
+- commented main.py file
+
+UI works on PyQt5 library with design from QT Designer app.
+
+### Work in progress - content:
+
+## Content
+
+## Installation
+
 
 ------
 This branch contains working Techmo TTS module applied to main.py file.
