@@ -9,7 +9,7 @@ class setup:
         self.text=""
         self.text_to_translate=''
         self.input_file=""
-        self.out_path="Records/test.wav"
+        self.out_path="test.wav"
         self.sample_rate=44100
         self.audio_encoding="pcm16"
         self.speech_pitch=1.0

@@ -1,12 +1,28 @@
 import time
+import wave
+import pyaudio
 
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
 from EasyNMT.translator_easynmt import translate
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-settings = setup()
-
+    settings = setup()
+    def PlaySynthesis(self):
+        chunk=1024
+        file = wave.open(r"Records/test.wav","rb") 
+        p = pyaudio.PyAudio()
+        stream = p.open(format = p.get_format_from_width(file.getsampwidth()),  
+                channels = file.getnchannels(),  
+                rate = file.getframerate(),  
+                output = True)
+        data = file.readframes(chunk)
+        while data:  
+            stream.write(data)  
+            data = file.readframes(chunk)   
+        stream.stop_stream()  
+        stream.close()      
+        p.terminate()  
     def SetInputText(self):
         self.settings.text_to_translate = self.input_text_line_edit.toPlainText()
     def SetInputLanguage(self):

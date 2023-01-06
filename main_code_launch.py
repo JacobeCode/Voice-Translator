@@ -5,10 +5,11 @@ from TTSTechmo.settings import setup
 from EasyNMT.translator_easynmt import translate
 
 settings = setup()
-settings.text_to_translate = "Testowanie wejścia kodu"
+settings.text_to_translate = "Moja wypowiedź testowa"
 settings.language_source = 'pl'
 settings.language = 'en'
 
+print("Sentence to translate : " + str(settings.text_to_translate))
 settings.text = translate(settings.text_to_translate, settings.language_source, settings.language)
 print(settings.text)
 if settings.language == 'pl':
@@ -19,4 +20,4 @@ elif settings.language == 'en':
     synthesize(settings)
 else:
     pass
-
+print("Translated sentence : "  + str(settings.text))
