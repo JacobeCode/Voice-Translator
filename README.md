@@ -1,4 +1,5 @@
-# UPDATE README !
+# UPDATE README
+## Currently functional work in progress UI with TTS and NMT.
 
 # Voice_Translator
 
