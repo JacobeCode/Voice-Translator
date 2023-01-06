@@ -23,7 +23,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="main_widget">
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QProgressBar" name="progress_bar">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -36,23 +36,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>991</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_2">
+   <widget class="QTextEdit" name="output_text_edit">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -68,7 +52,7 @@
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_3">
+   <widget class="QTextEdit" name="data_box">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -84,12 +68,12 @@
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="entry_language_box">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>260</y>
-      <width>301</width>
+      <width>261</width>
       <height>51</height>
      </rect>
     </property>
@@ -109,12 +93,12 @@
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="exit_language_box">
     <property name="geometry">
      <rect>
-      <x>720</x>
+      <x>680</x>
       <y>260</y>
-      <width>301</width>
+      <width>261</width>
       <height>51</height>
      </rect>
     </property>
@@ -134,7 +118,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="progress_label">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -156,7 +140,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="data_label">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -178,7 +162,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="output_text_label">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -200,29 +184,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>20</y>
-      <width>991</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <property name="text">
-     <string>Input Text</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="language_choice_label">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -238,7 +200,7 @@
      <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
-     <string>Language Pick</string>
+     <string>Language Choice</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -247,7 +209,7 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>310</x>
       <y>280</y>
       <width>141</width>
       <height>16</height>
@@ -266,7 +228,7 @@
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>310</x>
       <y>270</y>
       <width>141</width>
       <height>16</height>
@@ -285,7 +247,7 @@
    <widget class="Line" name="line_3">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>530</x>
       <y>280</y>
       <width>141</width>
       <height>20</height>
@@ -304,7 +266,7 @@
    <widget class="Line" name="line_4">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>530</x>
       <y>270</y>
       <width>141</width>
       <height>20</height>
@@ -323,7 +285,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>470</x>
       <y>280</y>
       <width>47</width>
       <height>13</height>
@@ -333,10 +295,10 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="to_label">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>450</x>
       <y>270</y>
       <width>81</width>
       <height>31</height>
@@ -355,7 +317,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="translate_button">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -368,7 +330,7 @@
      <string>Translate</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="translate_and_synthesize_button">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -381,6 +343,161 @@
      <string>Translate and Synthesize (not avalible for Spanish)</string>
     </property>
    </widget>
+   <widget class="QTabWidget" name="input_choice_widget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>991</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="documentMode">
+     <bool>true</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="voice_input">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <attribute name="title">
+      <string>Voice Input</string>
+     </attribute>
+     <widget class="QLabel" name="input_voice_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>961</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Voice Input</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="record_button">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>75</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Record</string>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="timer_of_recording">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="smallDecimalPoint">
+       <bool>false</bool>
+      </property>
+      <property name="mode">
+       <enum>QLCDNumber::Dec</enum>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Outline</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="text_input" native="true">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="title">
+      <string>Text Input</string>
+     </attribute>
+     <widget class="QLabel" name="input_text_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>961</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Input Text</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="input_text_line_edit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>961</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="replace_button">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>260</y>
+      <width>75</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Replace</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -391,29 +508,50 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+    <addaction name="actionExit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionSynthesis_Options"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSettings"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSynthesis_Options">
+   <property name="text">
+    <string>Synthesis Options</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>textEdit</sender>
-   <signal>textChanged()</signal>
-   <receiver>main_window</receiver>
-   <slot>SetInputText()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>712</x>
-     <y>170</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>749</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>comboBox</sender>
+   <sender>entry_language_box</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>main_window</receiver>
    <slot>SetInputLanguage()</slot>
@@ -429,7 +567,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>comboBox_2</sender>
+   <sender>exit_language_box</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>main_window</receiver>
    <slot>SetTranslationLanguage()</slot>
@@ -445,7 +583,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton</sender>
+   <sender>translate_button</sender>
    <signal>clicked()</signal>
    <receiver>main_window</receiver>
    <slot>Translate()</slot>
@@ -461,7 +599,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>translate_and_synthesize_button</sender>
    <signal>clicked()</signal>
    <receiver>main_window</receiver>
    <slot>TranslateAndSynthesize()</slot>
@@ -476,6 +614,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>input_text_line_edit</sender>
+   <signal>textChanged()</signal>
+   <receiver>main_window</receiver>
+   <slot>SetInputText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>388</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>-10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>replace_button</sender>
+   <signal>clicked()</signal>
+   <receiver>main_window</receiver>
+   <slot>ReplaceLanguages()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1001</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>982</x>
+     <y>-8</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>SetInputText()</slot>
@@ -483,5 +653,6 @@
   <slot>SetTranslationLanguage()</slot>
   <slot>Translate()</slot>
   <slot>TranslateAndSynthesize()</slot>
+  <slot>ReplaceLanguages()</slot>
  </slots>
 </ui>

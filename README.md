@@ -1,3 +1,5 @@
+# UPDATE README !
+
 # Voice_Translator
 
 ## This repository contains project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
@@ -19,6 +21,8 @@ This branch contains work-in-progress, WSL2-free TTS implementation with proper 
 - separated UI main and side window
 
 UI works on PyQt5 library with design from QT Designer app.
+
+Due to use of fasttext==0.9.2 installation of Visual Build Tools 2022 is needed.
 
 ### Description from EasyNMT branch :
 

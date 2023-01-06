@@ -7,6 +7,7 @@ class setup:
         self.list_voices=False
         self.response="streaming"
         self.text=""
+        self.text_to_translate=''
         self.input_file=""
         self.out_path="Records/test.wav"
         self.sample_rate=44100
@@ -18,6 +19,8 @@ class setup:
         self.voice_name=""
         self.voice_gender="male"
         self.voice_age='child'
-        self.language="pl"
+        self.language="en"
+        self.language_source='en'
+        self.tts_lang='tts-en'
         self.play=False
         self.tls_directory=""
