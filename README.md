@@ -51,17 +51,17 @@ Additional function translate() handles exception of using different model for e
 
 - Microsoft C++ Build Tools:
 
-Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
+        Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
 
-[Microsoft C++ Build Tools 2022](https://visualstudio.microsoft.com/pl/visual-cpp-build-tools/)
+        [Microsoft C++ Build Tools 2022](https://visualstudio.microsoft.com/pl/visual-cpp-build-tools/)
 
 - Packages listed in ST_Project.yml:
 
-To install packages run:
+        To install packages run:
 
-`conda env update -n "env_name" --file ST_project.yml`
+        `conda env update -n "env_name" --file ST_project.yml`
 
-Works properly on command-line, Powershell and also on Anaconda Prompt.
+        Works properly on command-line, Powershell and also on Anaconda Prompt.
 
 ## Content
 
