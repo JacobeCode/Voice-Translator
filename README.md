@@ -59,11 +59,13 @@ Currently in both solutions .wav files are saved to Records folder.
 - Code launch:
 
 To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`.
-At the top of the code, you can find settings for program. Currently use:
-    for input text pass string in `settings.text_to_translate = ""`
-    for language from we translate pass language abbreviation in `settings.language_source = ''`
-    for target labguage pass language abbreviation in `settings.language = ''`
+At the top of the code, you can find settings for program. 
+Currently use:
+- for input text pass string in `settings.text_to_translate = ""`
+- for language from we translate pass language abbreviation in `settings.language_source = ''`
+- for target language pass language abbreviation in `settings.language = ''`
 
+---
 
 - UI launch:
 
