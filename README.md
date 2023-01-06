@@ -37,6 +37,8 @@ Works properly on command-line, Powershell and also on Anaconda Prompt.
 - separated UI main and side window
 - added functions to work in UI
 
+---
+
 ### Work in progress - content:
 
 - connecting Whisper module for Speech Recogniton
@@ -71,9 +73,13 @@ Currently use:
 
 To launch translation and synthesis with UI solution open and run `main_UI_launch.py`.
 
+---
+
 ### TTS Techmo
 
 Folder and implementation contains TTS model with added value in form of classes and functions used in manipulating the synthesis.
+
+---
 
 ### EasyNMT
 
@@ -94,6 +100,8 @@ es->en  model: opus-mt-es-en
 en->es  model: opus-mt-en-es
 
 Additional function translate() handles exception of using different model for en->pl and return translated sentence.
+
+---
 
 ### UI work
 
