@@ -8,7 +8,7 @@ This branch contains work-in-progress, WSL2-free TTS and EasyNMT implementation 
 
 - Microsoft C++ Build Tools:
 
-Because of use of fasttext ver.0.9.2 it is needed to install Micros oft C++ Build Tools (Programming classic applications in C++ load):
+Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
 
 [Microsoft C++ Build Tools 2022](https://visualstudio.microsoft.com/pl/visual-cpp-build-tools/)
 
@@ -60,9 +60,9 @@ Currently in both solutions .wav files are saved to Records folder.
 
 To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`.
 At the top of the code, you can find settings for program. Currently use:
-- for input text pass string in `settings.text_to_translate = ""`
-- for language from we translate pass language abbreviation in `settings.language_source = ''`
-- for target labguage pass language abbreviation in `settings.language = ''`
+    - for input text pass string in `settings.text_to_translate = ""`
+    - for language from we translate pass language abbreviation in `settings.language_source = ''`
+    - for target labguage pass language abbreviation in `settings.language = ''`
 
 
 - UI launch:
