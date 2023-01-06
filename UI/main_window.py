@@ -20,20 +20,20 @@ class Ui_main_window(object):
         self.settings.text_to_translate = self.input_text_line_edit.toPlainText()
     def SetInputLanguage(self):
         if self.entry_language_box.currentText() == "English":
-            self.settings.language_source = "en"
+            self.settings.language_source = 'en'
         elif self.entry_language_box.currentText() == "Polish":
-            self.settings.language_source = "pl"
+            self.settings.language_source = 'pl'
         elif self.entry_language_box.currentText() == "Spanish":
-            self.settings.language_source = "es"
+            self.settings.language_source = 'es'
     def SetTranslationLanguage(self):
         if self.exit_language_box.currentText() == "English":
-            self.settings.language = "en"
-            self.settings.tts_lang = "tts-en"
+            self.settings.language = 'en'
+            self.settings.tts_lang = 'tts-en'
         elif self.exit_language_box.currentText() == "Polish":
-            self.settings.language = "pl"
-            self.settings.tts_lang = "tts-pl"
+            self.settings.language = 'pl'
+            self.settings.tts_lang = 'tts-pl'
         elif self.exit_language_box.currentText() == "Spanish":
-            self.settings.language = "es"
+            self.settings.language = 'es'
     def Translate(self):
         t = time.time()
         self.settings.text = translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)

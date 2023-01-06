@@ -23,8 +23,6 @@ This branch contains work-in-progress, WSL2-free TTS implementation with proper 
 
 UI works on PyQt5 library with design from QT Designer app.
 
-Due to use of fasttext==0.9.2 installation of Visual Build Tools 2022 is needed.
-
 ### Description from EasyNMT branch :
 
 translator_easynmt.py file contains implementation of translation models,as well as function for direct translation in chosen languages and directions.
@@ -69,7 +67,25 @@ Works properly on command-line, Powershell and also on Anaconda Prompt.
 
 This branch contains work-in-progress implementation of TTS and EasyNMT linked togheter to work as translator with synthesise speech output.
 
-To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`. [only synthesis now]
+Available languages for input:
+- English
+- Polish
+- Spanish (only text output)
+
+- Code launch:
+
+To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`.
+At the top of the code, you can find settings for program. Currently use:
+- for input text pass string in `settings.text_to_translate = ""`
+- for language from we translate pass language abbreviation in `settings.language_source = ''`
+- for target labguage pass language abbreviation in `settings.language = ''`
+
+Available languages (with abbreviation) for input:
+- English (en)
+- Polish (pl)
+- Spanish (es) (only text output)
+
+- UI launch:
 
 To launch translation and synthesis with UI solution open and run `main_UI_launch.py`.
 
