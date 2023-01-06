@@ -47,10 +47,29 @@ Additional function translate() handles exception of using different model for e
 
 ### Work in progress - content:
 
+## Installation/Requirements:
+
+- Microsoft C++ Build Tools:
+
+Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
+
+[Microsoft C++ Build Tools 2022](https://visualstudio.microsoft.com/pl/visual-cpp-build-tools/)
+
+- Packages listed in ST_Project.yml:
+
+To install packages run:
+
+`conda env update -n "env_name" --file ST_project.yml`
+
+Works properly on command-line, Powershell and also on Anaconda Prompt.
+
 ## Content
 
-## Installation
+This branch contains work-in-progress implementation of TTS and EasyNMT linked togheter to work as translator with synthesise speech output.
 
+To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`. [only synthesis now]
+
+To launch translation and synthesis with UI solution open and run `main_UI_launch.py`.
 
 ------
 This branch contains working Techmo TTS module applied to main.py file.
