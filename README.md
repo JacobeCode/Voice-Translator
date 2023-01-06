@@ -8,7 +8,7 @@ This branch contains work-in-progress, WSL2-free TTS and EasyNMT implementation 
 
 - Microsoft C++ Build Tools:
 
-Because of use of fasttext ver.0.9.2 it is needed to install Micros oft C++ Build Tools (Programming classic applications in C++ load):
+Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
 
 [Microsoft C++ Build Tools 2022](https://visualstudio.microsoft.com/pl/visual-cpp-build-tools/)
 
@@ -37,6 +37,8 @@ Works properly on command-line, Powershell and also on Anaconda Prompt.
 - separated UI main and side window
 - added functions to work in UI
 
+---
+
 ### Work in progress - content:
 
 - connecting Whisper module for Speech Recogniton
@@ -59,19 +61,25 @@ Currently in both solutions .wav files are saved to Records folder.
 - Code launch:
 
 To launch translation and synthesis from 'code level' solution, open `main_code_launch.py`.
-At the top of the code, you can find settings for program. Currently use:
+At the top of the code, you can find settings for program. 
+Currently use:
 - for input text pass string in `settings.text_to_translate = ""`
 - for language from we translate pass language abbreviation in `settings.language_source = ''`
-- for target labguage pass language abbreviation in `settings.language = ''`
+- for target language pass language abbreviation in `settings.language = ''`
 
+---
 
 - UI launch:
 
 To launch translation and synthesis with UI solution open and run `main_UI_launch.py`.
 
+---
+
 ### TTS Techmo
 
 Folder and implementation contains TTS model with added value in form of classes and functions used in manipulating the synthesis.
+
+---
 
 ### EasyNMT
 
@@ -92,6 +100,8 @@ es->en  model: opus-mt-es-en
 en->es  model: opus-mt-en-es
 
 Additional function translate() handles exception of using different model for en->pl and return translated sentence.
+
+---
 
 ### UI work
 
