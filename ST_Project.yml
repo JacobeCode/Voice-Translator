@@ -6,13 +6,16 @@ channels:
 dependencies:
   - pip
   - pip:
-    - grpcio==1.38.1
-    - grpcio-tools==1.38.1
+    - grpcio==1.43.0
+    - grpcio-tools==1.43.0
     - protobuf==3.20.3 # used this version, but required is >=3.20
-    - numpy==1.22.0
+    - numpy==1.24.0
     - sounddevice==0.4.1
     - pyqt5==5.15.7
     - fasttext==0.9.2
     - sacremoses==0.0.53
     - easynmt==2.0.2
     - pyaudio==0.2.13
+    - ffmpeg-python==0.2.0
+    - wheel==0.38.4
+    - whisper.ai==1.0.0.1
