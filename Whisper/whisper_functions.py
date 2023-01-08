@@ -64,9 +64,9 @@ def full_transcription():
     print("Please speak word(s) into the microphone")
     print('Press Ctrl+C to stop the recording')
 
-    record_to_file('output.wav')
+    record_to_file('Records\output.wav')
 
-    transcription = model.transcribe('output.wav')
+    transcription = model.transcribe('Records\output.wav')
 
     return transcription["text"]
 
