@@ -1,5 +1,0 @@
-name: VT_env
-channels:
-  - defaults
-dependencies:
-  - numpy
