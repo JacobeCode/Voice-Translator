@@ -1,4 +1,5 @@
-from Whisper.whisper_class import full_transcription
+from Whisper.whisper_class import Whisper
 
-trans = full_transcription()
-print(trans)
+model = Whisper()
+model.full_transcription()
+

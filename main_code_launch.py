@@ -3,12 +3,15 @@
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
 from EasyNMT.translator_easynmt import translate
+from Whisper.whisper_class import Whisper
 
 settings = setup()
-settings.text_to_translate = "Moja wypowiedź testowa"
+model = Whisper()
+# settings.text_to_translate = "Moja wypowiedź testowa"
 settings.language_source = 'pl'
 settings.language = 'en'
 
+settings.text_to_translate = model.full_transcription()
 print("Sentence to translate : " + str(settings.text_to_translate))
 settings.text = translate(settings.text_to_translate, settings.language_source, settings.language)
 print(settings.text)
