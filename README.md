@@ -1,2 +1,2 @@
-# Voice_Translator
-This repository contains project created for Speech Technology classes.
+# EasyNMT_Class
+This repository contains translator.py file, which is implementation of EasyNMT translation module as a python class.
