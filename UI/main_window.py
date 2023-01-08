@@ -10,6 +10,7 @@
 import time
 import wave
 import pyaudio
+import pygame
 
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
@@ -27,7 +28,10 @@ class Ui_main_window(object):
         self.settings = setup()
         self.model = Whisper()
     def RecordInput(self):
-        self.data_box.setText("Please speak word(s) into the microphone\nPress Ctrl+C to stop recording\nStarted recording")
+        pygame.init()
+        screen = pygame.display.set_mode((200, 200))
+        app_running=True
+        print("Start")
         p = pyaudio.PyAudio()
 
         stream = p.open(format=self.format,
@@ -38,12 +42,20 @@ class Ui_main_window(object):
 
         frames = []
 
-        control=False
-        while control!=True:
-            data = stream.read(self.chunk)
-            frames.append(data)
-            control=True
-
+        while app_running:
+                events = pygame.event.get()
+                data = stream.read(self.chunk)
+                frames.append(data)
+                for e in events:
+                    if e.type == pygame.QUIT:
+                        app_running = False
+                        break
+                    elif e.type == pygame.KEYDOWN:
+                        if e.key == pygame.K_ESCAPE:
+                            app_running = False
+                            break
+        pygame.quit()
+        print("End")
 
         sample_width = p.get_sample_size(self.format)
 
@@ -58,9 +70,9 @@ class Ui_main_window(object):
         wf.writeframes(b''.join(frames))
         wf.close()
 
-        # transcription = self.model.full_transcription()
-        # self.input_text_line_edit.setText(transcription)
-        # self.settings.text_to_translate = transcription
+        transcription = self.model.full_transcription()
+        self.input_text_line_edit.setText(transcription)
+        self.settings.text_to_translate = transcription
     def PlaySynthesis(self):
         chunk=1024
         file = wave.open("test.wav","rb") 
