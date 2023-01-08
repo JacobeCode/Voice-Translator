@@ -8,8 +8,8 @@ from Whisper.whisper_class import Whisper
 settings = setup()
 model = Whisper()
 # settings.text_to_translate = "Moja wypowiedź testowa"
-settings.language_source = 'pl'
-settings.language = 'en'
+settings.language_source = 'en'
+settings.language = 'pl'
 
 settings.text_to_translate = model.full_transcription()
 print("Sentence to translate : " + str(settings.text_to_translate))

@@ -1,6 +1,6 @@
 from easynmt import EasyNMT
 
-opus=EasyNMT('opus-mt')
+opus=EasyNMT('opus-mt', device='cuda')
 mbart=EasyNMT('mbart50_en2m', device="cpu")
 
 directions_for_opus=[['pl','en'],['es','pl'],['pl','es'],['es','en'],['en','es']]
