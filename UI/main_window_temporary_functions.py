@@ -13,12 +13,14 @@ import pyaudio
 import pygame
 import os
 
+from scipy.io import wavfile
 from os import path
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
 from EasyNMT.translator import Translator
 from Whisper.whisper_class import Whisper
-from PyQt5 import QtCore, QtGui, QtWidgets  
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QFileDialog
 
 class Ui_main_window(object):
     def __init__(self):
@@ -73,7 +75,7 @@ class Ui_main_window(object):
         wf.writeframes(b''.join(frames))
         wf.close()
 
-        transcription, asr_time = self.asr_model.full_transcription()
+        transcription, asr_time = self.asr_model.full_transcription('Whisper/whisper_records/transcribtion.wav')
         self.input_text_line_edit.setText(transcription)
         self.settings.text_to_translate = transcription
         self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
@@ -148,7 +150,30 @@ class Ui_main_window(object):
         self.translation_language_box.setCurrentIndex(source_lang)
         self.SetInputLanguage()
         self.SetTranslationLanguage()
+    def load_speech(self):
+        fname = QFileDialog.getOpenFileName(self, "Open File", "c:", "Wave Files (*.wav)")
+        if fname[0] == "":
+            self.data_box.setText("You didn't choose import file.")  
+        elif fname[0] != "":
+            start = time.time()
+            transcription, asr_time = self.asr_model.full_transcription(str(fname[0]))
+            asr_time = time.time() - start
+            self.input_text_line_edit.setText(transcription)
+            self.settings.text_to_translate = transcription    
+            self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
+    def save_synthesis(self):
+        fname = QFileDialog.getSaveFileName(self, "Save synthesis", "", "Wave Files (*.wav)")
+        if fname == "":
+            self.data_box.setText("You didn't choose export directory.")  
+        elif fname[0] != "":
+                if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+                    synthesis = wavfile.read("TTSTechmo/synthesis_records/synthesis.wav")
+                    wavfile.write(fname[0], synthesis[0], synthesis[1])
+                elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
+                    self.data_box.setText("There is no synthesis to save.")
 
 # -----
 
-        self.actionImport.triggered.connect(self.load_speech)
+        self.actionImport.triggered.connect(main_window.load_speech)
+        self.actionExport.triggered.connect(main_window.save_synthesis)
+        self.actionExit.triggered.connect(lambda:main_window.close())
