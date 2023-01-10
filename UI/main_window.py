@@ -18,7 +18,8 @@ from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
 from EasyNMT.translator import Translator
 from Whisper.whisper_class import Whisper
-from PyQt5 import QtCore, QtGui, QtWidgets  
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QFileDialog
 
 class Ui_main_window(object):
     def __init__(self):
@@ -73,7 +74,7 @@ class Ui_main_window(object):
         wf.writeframes(b''.join(frames))
         wf.close()
 
-        transcription, asr_time = self.asr_model.full_transcription()
+        transcription, asr_time = self.asr_model.full_transcription('Whisper/whisper_records/transcribtion.wav')
         self.input_text_line_edit.setText(transcription)
         self.settings.text_to_translate = transcription
         self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
@@ -148,6 +149,17 @@ class Ui_main_window(object):
         self.translation_language_box.setCurrentIndex(source_lang)
         self.SetInputLanguage()
         self.SetTranslationLanguage()
+    def load_speech(self):
+        fname = QFileDialog.getOpenFileName(self, "Open File", "c:", ".wav (*.wav)")
+        if fname[0] == "":
+            self.data_box.setText("You didn't choose import file.")  
+        elif fname[0] != "":
+            start = time.time()
+            transcription, asr_time = self.asr_model.full_transcription(str(fname[0]))
+            asr_time = time.time() - start
+            self.input_text_line_edit.setText(transcription)
+            self.settings.text_to_translate = transcription    
+            self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(1025, 480)
@@ -281,8 +293,6 @@ class Ui_main_window(object):
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
-        self.menuSettings = QtWidgets.QMenu(self.menubar)
-        self.menuSettings.setObjectName("menuSettings")
         main_window.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
@@ -295,13 +305,15 @@ class Ui_main_window(object):
         self.actionExit.setObjectName("actionExit")
         self.actionSynthesis_Options = QtWidgets.QAction(main_window)
         self.actionSynthesis_Options.setObjectName("actionSynthesis_Options")
+        self.actionSettings = QtWidgets.QAction(main_window)
+        self.actionSettings.setObjectName("actionSettings")
         self.menuFile.addAction(self.actionImport)
         self.menuFile.addAction(self.actionExport)
-        self.menuFile.addAction(self.actionExit)
         self.menuFile.addSeparator()
-        self.menuSettings.addAction(self.actionSynthesis_Options)
+        self.menuFile.addAction(self.actionSettings)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionExit)
         self.menubar.addAction(self.menuFile.menuAction())
-        self.menubar.addAction(self.menuSettings.menuAction())
 
         self.retranslateUi(main_window)
         self.source_language_box.currentIndexChanged['QString'].connect(main_window.SetInputLanguage) # type: ignore
@@ -312,6 +324,7 @@ class Ui_main_window(object):
         self.replace_button.clicked.connect(main_window.ReplaceLanguages) # type: ignore
         self.play_synthesis_button.clicked.connect(main_window.PlaySynthesis) # type: ignore
         self.record_button.clicked.connect(main_window.RecordInput) # type: ignore
+        self.actionImport.triggered.connect(main_window.load_speech)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def retranslateUi(self, main_window):
@@ -338,8 +351,8 @@ class Ui_main_window(object):
         self.input_text_label.setText(_translate("main_window", "Input Text"))
         self.output_text_label_2.setText(_translate("main_window", "Translation and Synthesis"))
         self.menuFile.setTitle(_translate("main_window", "File"))
-        self.menuSettings.setTitle(_translate("main_window", "Settings"))
-        self.actionImport.setText(_translate("main_window", "Import"))
-        self.actionExport.setText(_translate("main_window", "Export"))
+        self.actionImport.setText(_translate("main_window", "Import_speech"))
+        self.actionExport.setText(_translate("main_window", "Export_synthesis"))
         self.actionExit.setText(_translate("main_window", "Exit"))
         self.actionSynthesis_Options.setText(_translate("main_window", "Synthesis Options"))
+        self.actionSettings.setText(_translate("main_window", "Settings"))

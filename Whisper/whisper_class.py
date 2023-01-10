@@ -6,11 +6,8 @@ class Whisper():
     def __init__(self):
         self.model = whisper.load_model("small", device='cpu')
 
-    def full_transcription(self):
+    def full_transcription(self, path):
         start = time.time()
-        transcription = self.model.transcribe('Whisper/whisper_records/transcribtion.wav')
+        transcription = self.model.transcribe(path)
         end_time = time.time() - start
         return transcription["text"], end_time
-
-model = Whisper()
-model.full_transcription()

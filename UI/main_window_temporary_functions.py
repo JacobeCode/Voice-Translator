@@ -148,3 +148,7 @@ class Ui_main_window(object):
         self.translation_language_box.setCurrentIndex(source_lang)
         self.SetInputLanguage()
         self.SetTranslationLanguage()
+
+# -----
+
+        self.actionImport.triggered.connect(self.load_speech)
