@@ -13,6 +13,7 @@ import pyaudio
 import pygame
 import os
 
+from scipy.io import wavfile
 from os import path
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
@@ -150,7 +151,7 @@ class Ui_main_window(object):
         self.SetInputLanguage()
         self.SetTranslationLanguage()
     def load_speech(self):
-        fname = QFileDialog.getOpenFileName(self, "Open File", "c:", ".wav (*.wav)")
+        fname = QFileDialog.getOpenFileName(self, "Open File", "c:", "Wave Files (*.wav)")
         if fname[0] == "":
             self.data_box.setText("You didn't choose import file.")  
         elif fname[0] != "":
@@ -160,6 +161,16 @@ class Ui_main_window(object):
             self.input_text_line_edit.setText(transcription)
             self.settings.text_to_translate = transcription    
             self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
+    def save_synthesis(self):
+        fname = QFileDialog.getSaveFileName(self, "Save synthesis", "", "Wave Files (*.wav)")
+        if fname == "":
+            self.data_box.setText("You didn't choose export directory.")  
+        elif fname[0] != "":
+                if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+                    synthesis = wavfile.read("TTSTechmo/synthesis_records/synthesis.wav")
+                    wavfile.write(fname[0], synthesis[0], synthesis[1])
+                elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
+                    self.data_box.setText("There is no synthesis to save.")
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(1025, 480)
@@ -325,6 +336,8 @@ class Ui_main_window(object):
         self.play_synthesis_button.clicked.connect(main_window.PlaySynthesis) # type: ignore
         self.record_button.clicked.connect(main_window.RecordInput) # type: ignore
         self.actionImport.triggered.connect(main_window.load_speech)
+        self.actionExport.triggered.connect(main_window.save_synthesis)
+        self.actionExit.triggered.connect(lambda:main_window.close())
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def retranslateUi(self, main_window):

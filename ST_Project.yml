@@ -19,3 +19,4 @@ dependencies:
     - wheel==0.38.4
     - whisper.ai==1.0.0.1
     - pygame
+    - scipy
