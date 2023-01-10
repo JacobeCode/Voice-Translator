@@ -14,7 +14,7 @@ import pygame
 
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
-from EasyNMT.translator_easynmt import translate
+from EasyNMT.translator import Translator
 from Whisper.whisper_class import Whisper
 from PyQt5 import QtCore, QtGui, QtWidgets  
 
@@ -26,7 +26,8 @@ class Ui_main_window(object):
         self.rate = 44100
         self.file_path = 'output.wav'
         self.settings = setup()
-        self.model = Whisper()
+        self.asr_model = Whisper()
+        self.nmt_model = Translator()
     def RecordInput(self):
         self.data_box.setText("This is recorder window\nPlease say word(s) to microphone\nPress ESC to end recording\nAfter recording - please wait, the processing will be in motion")
         pygame.init()
@@ -70,7 +71,7 @@ class Ui_main_window(object):
         wf.writeframes(b''.join(frames))
         wf.close()
 
-        transcription, asr_time = self.model.full_transcription()
+        transcription, asr_time = self.asr_model.full_transcription()
         self.input_text_line_edit.setText(transcription)
         self.settings.text_to_translate = transcription
         self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
@@ -110,13 +111,13 @@ class Ui_main_window(object):
             self.settings.language = 'es'
     def Translate(self):
         t = time.time()
-        self.settings.text = translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
+        self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
         self.output_text_edit.setText(self.settings.text)
         elapsed = time.time() - t
         self.data_box.setText("Elapsed time of operation : " + str(elapsed))
     def TranslateAndSynthesize(self):
         t = time.time()
-        self.settings.text = translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
+        self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
         self.output_text_edit.setText(self.settings.text)
         tsynt = time.time()
         synthesize(self.settings)

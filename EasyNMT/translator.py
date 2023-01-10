@@ -3,7 +3,7 @@ from easynmt import EasyNMT
 class Translator:
 
     def __init__(self):
-        self.opus=EasyNMT('opus-mt',max_length=512,device='cpu',)
+        self.opus=EasyNMT('opus-mt', max_length=512,device='cpu')
         #self.mbart=EasyNMT('mbart50_en2m',max_length=512,device='cuda')
         self.mbart = EasyNMT('m2m_100_418M', max_length=512, device='cuda')
 
