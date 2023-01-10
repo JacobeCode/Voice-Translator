@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>464</height>
+    <height>271</height>
    </rect>
   </property>
   <property name="cursor">
@@ -32,454 +32,446 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="Voice_Translator_widget">
-   <widget class="QGroupBox" name="VoiceSettings">
+   <widget class="QGroupBox" name="Synthesis_Settings">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
-      <width>171</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Voice Settings</string>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>151</width>
-       <height>261</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="VoiceGender">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Voice Gender</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="GenderComboBox">
-        <item>
-         <property name="text">
-          <string>Male</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Female</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="VoiceAge">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Voice Age</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="AgeComboBox">
-        <item>
-         <property name="text">
-          <string>Child</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Adult</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Senile</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="VoiceName">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Voice Name</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="SpeechSettings">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>10</y>
-      <width>181</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Speech Settings</string>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>160</width>
-       <height>261</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="VertLaySpeech">
-      <item>
-       <widget class="QLabel" name="SpeechPitch">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Speech Pitch</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="SpeechPitchSpinBox">
-        <property name="maximum">
-         <double>10.000000000000000</double>
-        </property>
-        <property name="singleStep">
-         <double>0.010000000000000</double>
-        </property>
-        <property name="value">
-         <double>1.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="SpeechRate_2">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Speech Range</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="SpeechRangeSpinBox">
-        <property name="maximum">
-         <double>10.000000000000000</double>
-        </property>
-        <property name="singleStep">
-         <double>0.010000000000000</double>
-        </property>
-        <property name="value">
-         <double>1.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="SpeechRate">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Speech Rate</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="SpeechRateSpinBox">
-        <property name="maximum">
-         <double>10.000000000000000</double>
-        </property>
-        <property name="singleStep">
-         <double>0.010000000000000</double>
-        </property>
-        <property name="value">
-         <double>1.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="SpeechVolume">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Speech Volume</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDoubleSpinBox" name="SpeechVolumeSpinBox">
-        <property name="maximum">
-         <double>10.000000000000000</double>
-        </property>
-        <property name="singleStep">
-         <double>0.010000000000000</double>
-        </property>
-        <property name="value">
-         <double>1.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="AppSettings">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>10</y>
-      <width>221</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>App Settings</string>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>201</width>
-       <height>261</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="AppSettingsVert">
-      <item>
-       <widget class="QLabel" name="OutputPath">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Output Path</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QToolButton" name="toolButton">
-          <property name="text">
-           <string>...</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit">
-          <property name="text">
-           <string>VT_ui_test.wav</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QLabel" name="SampleRate">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Sample Rate</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="maximum">
-         <number>100000</number>
-        </property>
-        <property name="singleStep">
-         <number>100</number>
-        </property>
-        <property name="value">
-         <number>44100</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="AudioEncoding">
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="text">
-         <string>Audio Encoding</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>pcm16</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>ogg-vorbis</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="Synthesis">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>310</y>
       <width>611</width>
-      <height>111</height>
+      <height>221</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="title">
-     <string>Synthesis</string>
+     <string>Synthesis Settings</string>
     </property>
     <property name="flat">
      <bool>true</bool>
     </property>
-    <widget class="QPushButton" name="SynthesizeButton">
+    <widget class="QGroupBox" name="AppSettings">
      <property name="geometry">
       <rect>
-       <x>520</x>
+       <x>370</x>
        <y>20</y>
-       <width>75</width>
-       <height>81</height>
+       <width>221</width>
+       <height>201</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Synthesize</string>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
+     <property name="title">
+      <string>File and format</string>
      </property>
      <property name="flat">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
-    </widget>
-    <widget class="QComboBox" name="LanguageComboBox">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>70</y>
-       <width>411</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>English</string>
+     <widget class="QLabel" name="OutputPath">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>199</width>
+        <height>21</height>
+       </rect>
       </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Polish</string>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
       </property>
-     </item>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Output Path</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="folder_to_save_audio">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>166</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>VT_ui_test.wav</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="saving_path_audio_pick">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>25</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SampleRate">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>199</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Sample Rate</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="AudioEncoding">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>199</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Audio Encoding</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="audio_encoding_combo_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>199</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>pcm16</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ogg-vorbis</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="sampling_combo_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>199</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>44100 Hz</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>22050 Hz</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>8000 Hz</string>
+       </property>
+      </item>
+     </widget>
     </widget>
-    <widget class="QLabel" name="Language">
+    <widget class="QGroupBox" name="SpeechSettings">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>70</y>
-       <width>91</width>
-       <height>31</height>
+       <x>20</x>
+       <y>20</y>
+       <width>341</width>
+       <height>201</height>
       </rect>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+     <property name="title">
+      <string>Speech Settings</string>
      </property>
-     <property name="text">
-      <string>Language</string>
+     <property name="flat">
+      <bool>true</bool>
      </property>
-    </widget>
-    <widget class="QLabel" name="SynthesisText">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>30</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="text">
-      <string>Synthesis text</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>30</y>
-       <width>411</width>
-       <height>31</height>
-      </rect>
-     </property>
+     <widget class="QLabel" name="VoiceGender">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Voice Gender</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="gender_combo_cox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Male</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Female</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="VoiceAge">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Voice Age</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="age_combo_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Child</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Adult</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Senile</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="SpeechRate_2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>158</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Speech Range</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="speech_range_spin_box">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>158</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SpeechRate">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>80</y>
+        <width>158</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Speech Rate</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="speech_rate_spin_box">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>110</y>
+        <width>158</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SpeechVolume">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>140</y>
+        <width>158</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Speech Volume</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="speech_volume_spin_bxo">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>170</y>
+        <width>158</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SpeechPitch">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>Speech Pitch</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="speech_pitch_spin_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>131</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -498,23 +490,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>SynthesizeButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Voice_Translator</receiver>
-   <slot>SynthesisFunction()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>582</x>
-     <y>382</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>559</x>
-     <y>0</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>GenderComboBox</sender>
+   <sender>gender_combo_cox</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>GenderPickFunction()</slot>
@@ -530,7 +506,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>AgeComboBox</sender>
+   <sender>age_combo_box</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>AgePickFunction()</slot>
@@ -546,7 +522,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>SpeechPitchSpinBox</sender>
+   <sender>speech_pitch_spin_box</sender>
    <signal>valueChanged(double)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>SpeedPitchPickFunction()</slot>
@@ -562,7 +538,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>SpeechRangeSpinBox</sender>
+   <sender>speech_range_spin_box</sender>
    <signal>valueChanged(double)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>SpeechRatePickFunction()</slot>
@@ -578,7 +554,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>SpeechVolumeSpinBox</sender>
+   <sender>speech_volume_spin_bxo</sender>
    <signal>valueChanged(double)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>SpeechVolumePickFunction()</slot>
@@ -594,7 +570,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>toolButton</sender>
+   <sender>saving_path_audio_pick</sender>
    <signal>clicked()</signal>
    <receiver>Voice_Translator</receiver>
    <slot>FolderPickFunction()</slot>
@@ -610,23 +586,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>Voice_Translator</receiver>
-   <slot>SamplingFreqPickFunction()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>532</x>
-     <y>222</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>519</x>
-     <y>-15</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>comboBox</sender>
+   <sender>audio_encoding_combo_box</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>Voice_Translator</receiver>
    <slot>AudioEncodingPickFunction()</slot>
@@ -638,38 +598,6 @@
     <hint type="destinationlabel">
      <x>576</x>
      <y>-19</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_2</sender>
-   <signal>editingFinished()</signal>
-   <receiver>Voice_Translator</receiver>
-   <slot>SynthesisTextChangeFunction()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>166</x>
-     <y>366</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>192</x>
-     <y>-3</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>LanguageComboBox</sender>
-   <signal>currentIndexChanged(QString)</signal>
-   <receiver>Voice_Translator</receiver>
-   <slot>LanguagePickFunction()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>201</x>
-     <y>417</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>27</x>
-     <y>-8</y>
     </hint>
    </hints>
   </connection>
