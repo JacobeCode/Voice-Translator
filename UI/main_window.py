@@ -27,11 +27,13 @@ class Ui_main_window(object):
         self.file_path = 'output.wav'
         self.settings = setup()
         self.model = Whisper()
+        self.elapsedtrans = 0
     def RecordInput(self):
+        self.data_box.setText("This is recorder window\nPlease say word(s) to microphone\nPress ESC to end recording\nAfter recording - please wait, the processing will be in motion")
         pygame.init()
-        screen = pygame.display.set_mode((200, 200))
+        screen = pygame.display.set_mode((5, 5))
+        pygame.display.set_caption('Recorder')
         app_running=True
-        print("Start")
         p = pyaudio.PyAudio()
 
         stream = p.open(format=self.format,
@@ -55,7 +57,6 @@ class Ui_main_window(object):
                             app_running = False
                             break
         pygame.quit()
-        print("End")
 
         sample_width = p.get_sample_size(self.format)
 
@@ -70,9 +71,13 @@ class Ui_main_window(object):
         wf.writeframes(b''.join(frames))
         wf.close()
 
+        ttrans = time.time()
         transcription = self.model.full_transcription()
         self.input_text_line_edit.setText(transcription)
         self.settings.text_to_translate = transcription
+        self.elapsedttrans = time.time() - ttrans
+        self.data_box.setText("Processing has finished\nYour text should be in display box above")
+
     def PlaySynthesis(self):
         chunk=1024
         file = wave.open("test.wav","rb") 
@@ -111,7 +116,10 @@ class Ui_main_window(object):
         self.settings.text = translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
         self.output_text_edit.setText(self.settings.text)
         elapsed = time.time() - t
-        self.data_box.setText("Elapsed time of operation : " + str(elapsed))
+        if self.elapsedtrans == 0:
+            self.data_box.setText("Elapsed time of operation : " + str(elapsed))
+        elif self.elapsedtrans != 0:
+            self.data_box.setText("Elapsed time of operation : " + str(elapsed + self.elapsedtrans) + "Elapsed time of translation : " + str(elapsed) + "\nElapsed time of transcribing voice to text : " + str(self.elapsedtrans))
     def TranslateAndSynthesize(self):
         t = time.time()
         self.settings.text = translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
@@ -120,7 +128,10 @@ class Ui_main_window(object):
         synthesize(self.settings)
         elapsed = time.time() - t
         elapsedsynt = time.time() - tsynt
-        self.data_box.setText("Elapsed time of operation : " + str(elapsed) + "/nSynthesis elapsed time : " + str(elapsedsynt) + "/nTranslation elapsed time : " + str(elapsed - elapsedsynt))
+        if self.elapsedtrans == 0:
+            self.data_box.setText("Elapsed time of operation : " + str(elapsed) + "\nSynthesis elapsed time : " + str(elapsedsynt) + "\nTranslation elapsed time : " + str(elapsed - elapsedsynt))
+        elif self.elapsedtrans != 0:
+            self.data_box.setText("Elapsed time of operation : " + str(elapsed + self.elapsedtrans) + "\nSynthesis elapsed time : " + str(elapsedsynt) + "\nTranslation elapsed time : " + str(elapsed - elapsedsynt) + "Transcribtion from voice to text time : " + str(self.elapsedtrans))
     def ReplaceLanguages(self):
         source_lang = self.source_language_box.currentIndex()
         self.source_language_box.setCurrentIndex(self.translation_language_box.currentIndex())
