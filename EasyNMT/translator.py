@@ -3,10 +3,10 @@ from easynmt import EasyNMT
 class Translator:
 
     def __init__(self):
-        self.opus=EasyNMT('opus-mt', max_length=512,device='cpu')
+        self.opus=EasyNMT('opus-mt', max_length=512,device='cuda')
         #self.mbart=EasyNMT('mbart50_en2m',max_length=512,device='cuda')
-        self.mbart = EasyNMT('m2m_100_418M', max_length=512, device='cuda')
-
+        self.mbart = EasyNMT('m2m_100_418M', max_length=512, device='cpu')
+        
         directions_for_opus=[['pl','en'],['es','pl'],['pl','es'],['es','en'],['en','es']]
         for direction in directions_for_opus:
             self.opus.translate("initialization text",source_lang=direction[0],target_lang=direction[1])

@@ -11,7 +11,9 @@ import time
 import wave
 import pyaudio
 import pygame
+import os
 
+from os import path
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
 from EasyNMT.translator import Translator
@@ -24,7 +26,7 @@ class Ui_main_window(object):
         self.format = pyaudio.paInt16
         self.channels = 2
         self.rate = 44100
-        self.file_path = 'output.wav'
+        self.file_path = 'Whisper/whisper_records/transcribtion.wav'
         self.settings = setup()
         self.asr_model = Whisper()
         self.nmt_model = Translator()
@@ -77,20 +79,23 @@ class Ui_main_window(object):
         self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
 
     def PlaySynthesis(self):
-        chunk=1024
-        file = wave.open("test.wav","rb") 
-        p = pyaudio.PyAudio()
-        stream = p.open(format = p.get_format_from_width(file.getsampwidth()),  
-                channels = file.getnchannels(),  
-                rate = file.getframerate(),  
-                output = True)
-        data = file.readframes(chunk)
-        while data:  
-            stream.write(data)  
-            data = file.readframes(chunk)   
-        stream.stop_stream()  
-        stream.close()      
-        p.terminate()  
+        if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+            chunk=1024
+            file = wave.open("TTSTechmo/synthesis_records/synthesis.wav","rb") 
+            p = pyaudio.PyAudio()
+            stream = p.open(format = p.get_format_from_width(file.getsampwidth()),  
+                    channels = file.getnchannels(),  
+                    rate = file.getframerate(),  
+                    output = True)
+            data = file.readframes(chunk)
+            while data:  
+                stream.write(data)  
+                data = file.readframes(chunk)   
+            stream.stop_stream()  
+            stream.close()      
+            p.terminate()
+        elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
+            self.data_box.setText("There is no voice synthesis to listen. It is likely that no synthesis was carried out.")
     def SetInputText(self):
         self.settings.text_to_translate = self.input_text_line_edit.toPlainText()  
     def SetInputLanguage(self):
@@ -110,20 +115,33 @@ class Ui_main_window(object):
         elif self.translation_language_box.currentText() == "Spanish":
             self.settings.language = 'es'
     def Translate(self):
-        t = time.time()
-        self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
-        self.output_text_edit.setText(self.settings.text)
-        elapsed = time.time() - t
-        self.data_box.setText("Elapsed time of operation : " + str(elapsed))
+        if self.input_text_line_edit.toPlainText() != "":
+            if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+                os.remove("TTSTechmo/synthesis_records/synthesis.wav")
+            t = time.time()
+            self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
+            self.output_text_edit.setText(self.settings.text)
+            elapsed = time.time() - t
+            self.data_box.setText("Elapsed time of operation : " + str(elapsed))
+        else:
+            self.data_box.setText("There is no translation text. Please write something or record your speech.")
     def TranslateAndSynthesize(self):
-        t = time.time()
-        self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
-        self.output_text_edit.setText(self.settings.text)
-        tsynt = time.time()
-        synthesize(self.settings)
-        elapsed = time.time() - t
-        elapsedsynt = time.time() - tsynt
-        self.data_box.setText("Elapsed time of operation : " + str(elapsed) + "\nSynthesis elapsed time : " + str(elapsedsynt) + "\nTranslation elapsed time : " + str(elapsed - elapsedsynt))
+        if self.input_text_line_edit.toPlainText() != "":
+            if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+                os.remove("TTSTechmo/synthesis_records/synthesis.wav")
+            t = time.time()
+            self.settings.text = self.nmt_model.translate(self.settings.text_to_translate, self.settings.language_source, self.settings.language)
+            self.output_text_edit.setText(self.settings.text)
+            tsynt = time.time()
+            synthesize(self.settings)
+            elapsed = time.time() - t
+            elapsedsynt = time.time() - tsynt
+            if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+                self.data_box.setText("Elapsed time of operation : " + str(elapsed) + "\nSynthesis elapsed time : " + str(elapsedsynt) + "\nTranslation elapsed time : " + str(elapsed - elapsedsynt))
+            elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
+                self.data_box.setText("Sorry, but it seems that TTS service is unreachable right now, please try again later.\nTranslation elapsed time : " + str(elapsed - elapsedsynt))
+        else:
+            self.data_box.setText("There is no translation text. Please write something or record your speech.")    
     def ReplaceLanguages(self):
         source_lang = self.source_language_box.currentIndex()
         self.source_language_box.setCurrentIndex(self.translation_language_box.currentIndex())
