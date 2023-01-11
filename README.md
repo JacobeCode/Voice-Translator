@@ -20,6 +20,8 @@ It is optional, but recommended solution.
 
 If you don't want to use CUDA as device, it is required to change in EasyNMT/translator - opus device to "cpu".
 
+---
+
 - Microsoft C++ Build Tools:
 
 Because of use of fasttext ver.0.9.2 it is needed to install Microsoft C++ Build Tools (Programming classic applications in C++ load):
