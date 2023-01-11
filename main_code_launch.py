@@ -2,18 +2,19 @@
 
 from TTSTechmo.synthesize import synthesize
 from TTSTechmo.settings import setup
-from EasyNMT.translator_easynmt import translate
+from EasyNMT.translator import Translator
 from Whisper.whisper_class import Whisper
 
 settings = setup()
-model = Whisper()
+asr_model = Whisper()
+nmt_model = Translator()
 # settings.text_to_translate = "Moja wypowiedź testowa"
 settings.language_source = 'en'
 settings.language = 'pl'
 
-settings.text_to_translate = model.full_transcription()
+settings.text_to_translate = asr_model.full_transcription()
 print("Sentence to translate : " + str(settings.text_to_translate))
-settings.text = translate(settings.text_to_translate, settings.language_source, settings.language)
+settings.text = nmt_model.translate(settings.text_to_translate, settings.language_source, settings.language)
 print(settings.text)
 if settings.language == 'pl':
     settings.tts_lang = 'tts-pl'

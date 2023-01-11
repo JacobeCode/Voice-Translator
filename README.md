@@ -2,9 +2,23 @@
 
 ## This repository contains project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
 
-This branch contains work-in-progress, WSL2-free TTS and EasyNMT implementation with proper instalation instructions and working YAML file for installing packages needed to run program. 
+This branch contains version 1.0.0 of Techmo TTS, EasyNMT and Whisper implementation in project for Speech Technology classes project with proper instalation instructions and working YAML file for installing packages needed to run program. 
 
 ## Installation/Requirements:
+
+- PyTorch with CUDA compute platform (CUDA 11.6) (optional):
+
+To use CUDA computing, it is required to install PyTorch with CUDA module with command:
+
+`conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia`
+
+It can be generated on 'Start locally' page of PyTorch:
+
+[PyTorch]https://pytorch.org/get-started/locally/
+
+It is optional, but recommended solution.
+
+If you don't want to use CUDA as device, it is required to change in EasyNMT/translator - opus device to "cpu".
 
 - Microsoft C++ Build Tools:
 
@@ -22,41 +36,26 @@ To install packages run:
 
 Works properly on command-line, Powershell and also on Anaconda Prompt.
 
-## Work in progress content:
-
-### Currently updated:
-- README.md file
-- YAML file change name to "ST_Project" for naming clarity:
-    - added conda-forge and anaconda channels
-    - added pip dependencies for installing TTS requirements (deleted requirements.txt - now it is useless)
-- commented main.py file
-- splitted main.py into UI instance (first version) and code instance (second version)
-- set Records/test.wav as default
-- updated .gitignore
-- sorted main files and directiories
-- separated UI main and side window
-- added functions to work in UI
-
 ---
 
-### Work in progress - content:
+- ffmpeg package
 
-- connecting Whisper module for Speech Recogniton
-- upgrading UI
-- adding more options for modulating options in both: Easy NMT and TTS modules
-- optimizing and showing reports for process
-- file input
+Due to encountered problems, it is suggested to install independently ffmpeg-python package from conda-forge, as shown below:
+
+`conda install -c conda-forge ffmpeg-python`
+
+[Ffmpeg-python]https://github.com/conda-forge/ffmpeg-python-feedstock
 
 ## Content
 
-This branch contains work-in-progress implementation of TTS and EasyNMT linked togheter to work as translator with synthesise speech output.
+This branch contains contains version 1.0.0 of Techmo TTS, EasyNMT and Whisper linked togheter to work as translator with synthesise speech output.
 
 Available languages (with abbreviation) for input:
 - English (en)
 - Polish (pl)
 - Spanish (es) (only text output)
 
-Currently in both solutions .wav files are saved to Records folder.
+Currently in both solutions .wav files are saved to proper folders folders, but it can be also saved and loaded through proper options (in UI solution).
 
 - Code launch:
 
@@ -67,6 +66,7 @@ Currently use:
 - for language from we translate pass language abbreviation in `settings.language_source = ''`
 - for target language pass language abbreviation in `settings.language = ''`
 
+Rest of settings to use in code solution are described in TTSTechmo/settings file.
 ---
 
 - UI launch:

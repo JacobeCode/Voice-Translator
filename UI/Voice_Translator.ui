@@ -72,12 +72,12 @@
     </property>
     <item>
      <property name="text">
-      <string>English</string>
+      <string>Polish</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Polish</string>
+      <string>English</string>
      </property>
     </item>
     <item>
@@ -94,6 +94,9 @@
       <width>231</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="currentText">
+     <string>English</string>
     </property>
     <item>
      <property name="text">

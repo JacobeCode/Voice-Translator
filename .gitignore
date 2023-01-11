@@ -2,11 +2,24 @@
 .conda
 
 # Cache files
-Text_to_speech/_pycache_
+
+TTSTechmo/_pycache_
+TTSTechmo/tts/_pycache_
 UI/_pycache_
+EasyNMT/_pycache_
+Whisper/_pycache_
 _pycache_
 
 # Logs from main and UI
 UI/logs
 logs
 *.pyc
+
+# Temporary files used in process of constructing of UI and .ui
+UI/main_window_temporary_functions
+UI/settings_window_temporary_functions
+UI/settings_window
+UI/Voice_Translator
+
+# Idea files
+.idea

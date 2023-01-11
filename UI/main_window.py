@@ -32,6 +32,7 @@ class Ui_main_window(object):
         self.settings = setup()
         self.asr_model = Whisper()
         self.nmt_model = Translator()
+
     def RecordInput(self):
         self.data_box.setText("This is recorder window\nPlease say word(s) to microphone\nPress ESC to end recording\nAfter recording - please wait, the processing will be in motion")
         pygame.init()
@@ -98,8 +99,10 @@ class Ui_main_window(object):
             p.terminate()
         elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
             self.data_box.setText("There is no voice synthesis to listen. It is likely that no synthesis was carried out.")
+
     def SetInputText(self):
         self.settings.text_to_translate = self.input_text_line_edit.toPlainText()  
+
     def SetInputLanguage(self):
         if self.source_language_box.currentText() == "English":
             self.settings.language_source = 'en'
@@ -107,6 +110,7 @@ class Ui_main_window(object):
             self.settings.language_source = 'pl'
         elif self.source_language_box.currentText() == "Spanish":
             self.settings.language_source = 'es'
+
     def SetTranslationLanguage(self):
         if self.translation_language_box.currentText() == "English":
             self.settings.language = 'en'
@@ -116,6 +120,7 @@ class Ui_main_window(object):
             self.settings.tts_lang = 'tts-pl'
         elif self.translation_language_box.currentText() == "Spanish":
             self.settings.language = 'es'
+
     def Translate(self):
         if self.input_text_line_edit.toPlainText() != "":
             if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
@@ -127,6 +132,7 @@ class Ui_main_window(object):
             self.data_box.setText("Elapsed time of operation : " + str(elapsed))
         else:
             self.data_box.setText("There is no translation text. Please write something or record your speech.")
+
     def TranslateAndSynthesize(self):
         if self.input_text_line_edit.toPlainText() != "":
             if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
@@ -144,12 +150,14 @@ class Ui_main_window(object):
                 self.data_box.setText("Sorry, but it seems that TTS service is unreachable right now, please try again later.\nTranslation elapsed time : " + str(elapsed - elapsedsynt))
         else:
             self.data_box.setText("There is no translation text. Please write something or record your speech.")    
+
     def ReplaceLanguages(self):
         source_lang = self.source_language_box.currentIndex()
         self.source_language_box.setCurrentIndex(self.translation_language_box.currentIndex())
         self.translation_language_box.setCurrentIndex(source_lang)
         self.SetInputLanguage()
         self.SetTranslationLanguage()
+
     def load_speech(self):
         fname = QFileDialog.getOpenFileName(self, "Open File", "c:", "Wave Files (*.wav)")
         if fname[0] == "":
@@ -161,6 +169,7 @@ class Ui_main_window(object):
             self.input_text_line_edit.setText(transcription)
             self.settings.text_to_translate = transcription    
             self.data_box.setText("Processing has finished\nYour text should be in display box above\nTime of ASR process : " + str(asr_time))
+
     def save_synthesis(self):
         fname = QFileDialog.getSaveFileName(self, "Save synthesis", "", "Wave Files (*.wav)")
         if fname == "":
@@ -171,6 +180,14 @@ class Ui_main_window(object):
                     wavfile.write(fname[0], synthesis[0], synthesis[1])
                 elif path.exists("TTSTechmo/synthesis_records/synthesis.wav") == False:
                     self.data_box.setText("There is no synthesis to save.")
+                    
+    def end(self):
+        if path.exists("TTSTechmo/synthesis_records/synthesis.wav") == True:
+            os.remove("TTSTechmo/synthesis_records/synthesis.wav")
+        if path.exists('Whisper/whisper_records/transcribtion.wav') == True:
+            os.remove('Whisper/whisper_records/transcribtion.wav')
+        self.close()
+        
     def setupUi(self, main_window):
         main_window.setObjectName("main_window")
         main_window.resize(1025, 480)
@@ -334,18 +351,19 @@ class Ui_main_window(object):
         self.input_text_line_edit.textChanged.connect(main_window.SetInputText) # type: ignore
         self.replace_button.clicked.connect(main_window.ReplaceLanguages) # type: ignore
         self.play_synthesis_button.clicked.connect(main_window.PlaySynthesis) # type: ignore
-        self.record_button.clicked.connect(main_window.RecordInput) # type: ignore
+        self.record_button.clicked.connect(main_window.RecordInput) # type: ignore       
         self.actionImport.triggered.connect(main_window.load_speech)
         self.actionExport.triggered.connect(main_window.save_synthesis)
-        self.actionExit.triggered.connect(lambda:main_window.close())
+        self.actionExit.triggered.connect(main_window.end)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "MainWindow"))
-        self.source_language_box.setItemText(0, _translate("main_window", "English"))
-        self.source_language_box.setItemText(1, _translate("main_window", "Polish"))
+        self.source_language_box.setItemText(0, _translate("main_window", "Polish"))
+        self.source_language_box.setItemText(1, _translate("main_window", "English"))
         self.source_language_box.setItemText(2, _translate("main_window", "Spanish"))
+        self.translation_language_box.setCurrentText(_translate("main_window", "English"))
         self.translation_language_box.setItemText(0, _translate("main_window", "English"))
         self.translation_language_box.setItemText(1, _translate("main_window", "Polish"))
         self.translation_language_box.setItemText(2, _translate("main_window", "Spanish"))

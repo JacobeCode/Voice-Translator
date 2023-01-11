@@ -543,7 +543,7 @@
       </rect>
      </property>
      <property name="currentText">
-      <string>cuda</string>
+      <string>cpu</string>
      </property>
      <item>
       <property name="text">
@@ -749,12 +749,12 @@
    <slot>GenderPickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>128</y>
+     <x>119</x>
+     <y>120</y>
     </hint>
     <hint type="destinationlabel">
      <x>123</x>
-     <y>-11</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -765,12 +765,12 @@
    <slot>AgePickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>73</x>
-     <y>233</y>
+     <x>83</x>
+     <y>180</y>
     </hint>
     <hint type="destinationlabel">
      <x>87</x>
-     <y>-13</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -781,12 +781,12 @@
    <slot>SpeedPitchPickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>297</x>
-     <y>105</y>
+     <x>127</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel">
      <x>307</x>
-     <y>-2</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -797,12 +797,12 @@
    <slot>SpeechRatePickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>333</x>
-     <y>171</y>
+     <x>313</x>
+     <y>118</y>
     </hint>
     <hint type="destinationlabel">
      <x>340</x>
-     <y>-15</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -813,12 +813,12 @@
    <slot>SpeechVolumePickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
-     <y>303</y>
+     <x>204</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel">
      <x>233</x>
-     <y>-10</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -829,12 +829,12 @@
    <slot>FolderPickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>429</x>
-     <y>128</y>
+     <x>409</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
      <x>446</x>
-     <y>-5</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -845,12 +845,108 @@
    <slot>AudioEncodingPickFunction()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>601</x>
-     <y>303</y>
+     <x>581</x>
+     <y>240</y>
     </hint>
     <hint type="destinationlabel">
      <x>576</x>
-     <y>-19</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>speech_rate_spin_box</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SpeechRatePickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sampling_combo_box</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>SamplingFreqPickFunction()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>168</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>asr_model_choice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>318</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>159</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>asr_device_choice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>533</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>534</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_5</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>nmt_device_choice_rest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>341</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_6</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Voice_Translator</receiver>
+   <slot>nmt_device_choice_bart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>29</y>
     </hint>
    </hints>
   </connection>
@@ -868,5 +964,9 @@
   <slot>AudioEncodingPickFunction()</slot>
   <slot>SynthesisTextChangeFunction()</slot>
   <slot>LanguagePickFunction()</slot>
+  <slot>asr_model_choice()</slot>
+  <slot>asr_device_choice()</slot>
+  <slot>nmt_device_choice_rest()</slot>
+  <slot>nmt_device_choice_bart()</slot>
  </slots>
 </ui>
