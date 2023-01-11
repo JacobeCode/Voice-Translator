@@ -2,7 +2,7 @@
 
 ## This repository contains project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
 
-This branch contains version 1.0.0 of Techmo TTS, EasyNMT and Whisper implementation in project for Speech Technology classes project with proper instalation instructions and working YAML file for installing packages needed to run program. 
+This branch contains version 1.0.1 of Techmo TTS, EasyNMT and Whisper implementation in project for Speech Technology classes project with proper instalation instructions and working YAML file for installing packages needed to run program. 
 
 ## Installation/Requirements:
 
@@ -58,6 +58,7 @@ Available languages (with abbreviation) for input:
 - Spanish (es) (only text output)
 
 Currently in both solutions .wav files are saved to proper folders folders, but it can be also saved and loaded through proper options (in UI solution).
+Please, take into consideration that program in both version may take a while to launch.
 
 - Code launch:
 

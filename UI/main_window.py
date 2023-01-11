@@ -152,9 +152,9 @@ class Ui_main_window(object):
             self.data_box.setText("There is no translation text. Please write something or record your speech.")    
 
     def ReplaceLanguages(self):
-        source_lang = self.source_language_box.currentIndex()
-        self.source_language_box.setCurrentIndex(self.translation_language_box.currentIndex())
-        self.translation_language_box.setCurrentIndex(source_lang)
+        source_lang = self.source_language_box.currentText()
+        self.source_language_box.setCurrentText(self.translation_language_box.currentText())
+        self.translation_language_box.setCurrentText(source_lang)
         self.SetInputLanguage()
         self.SetTranslationLanguage()
 
