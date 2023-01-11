@@ -1,1 +1,0 @@
-# Main file of Voice_Translator project
