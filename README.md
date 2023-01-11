@@ -69,6 +69,7 @@ Currently use:
 - for target language pass language abbreviation in `settings.language = ''`
 
 Rest of settings to use in code solution are described in TTSTechmo/settings file.
+
 ---
 
 - UI launch:
