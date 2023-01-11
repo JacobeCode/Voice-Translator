@@ -20,6 +20,8 @@ It is optional, but recommended solution.
 
 If you don't want to use CUDA as device, it is required to change in EasyNMT/translator - opus device to "cpu".
 
+It is possible to use CUDA on Whisper model (Whisper/whisper_class) and Opus model (EasyNMT/translator), but use it for your own responsibility and research capability of your GPU and VRAM.
+
 ---
 
 - Microsoft C++ Build Tools:
@@ -110,3 +112,14 @@ Additional function translate() handles exception of using different model for e
 ### UI work
 
 UI works on PyQt5 library (ver.5.15.7) and was constructed with QT Designer app.
+
+### With thanks for free use of resurces
+
+---
+
+@article{fan2020beyond,
+  title={Beyond English-Centric Multilingual Machine Translation},
+  author={Fan, Angela and Bhosale, Shruti and Schwenk, Holger and Ma, Zhiyi and El-Kishky, Ahmed and Goyal, Siddharth and Baines, Mandeep and Celebi, Onur and Wenzek, Guillaume and Chaudhary, Vishrav and Goyal, Naman and Birch, Tom and Liptchinsky, Vitaliy and Edunov, Sergey and Grave, Edouard and Auli, Michael and Joulin, Armand},
+  journal={arXiv preprint},
+  year={2020}
+}
