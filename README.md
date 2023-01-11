@@ -112,6 +112,8 @@ UI works on PyQt5 library (ver.5.15.7) and was constructed with QT Designer app.
 
 ### With thanks for free use of resurces
 
+---
+
 @article{fan2020beyond,
   title={Beyond English-Centric Multilingual Machine Translation},
   author={Fan, Angela and Bhosale, Shruti and Schwenk, Holger and Ma, Zhiyi and El-Kishky, Ahmed and Goyal, Siddharth and Baines, Mandeep and Celebi, Onur and Wenzek, Guillaume and Chaudhary, Vishrav and Goyal, Naman and Birch, Tom and Liptchinsky, Vitaliy and Edunov, Sergey and Grave, Edouard and Auli, Michael and Joulin, Armand},
