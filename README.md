@@ -20,6 +20,8 @@ It is optional, but recommended solution.
 
 If you don't want to use CUDA as device, it is required to change in EasyNMT/translator - opus device to "cpu".
 
+It is possible to use CUDA on Whisper model (Whisper/whisper_class) and Opus model (EasyNMT/translator), but use it for your own responsibility and research capability of your GPU and VRAM.
+
 ---
 
 - Microsoft C++ Build Tools:
