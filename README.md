@@ -1,6 +1,6 @@
 # Voice Translator
 
-## This repository contains project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
+## This repository contains voice translator created as a project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
 
 This branch contains version 1.0.1 of Techmo TTS, EasyNMT and Whisper implementation in project for Speech Technology classes project with proper instalation instructions and working YAML file for installing packages needed to run program. 
 
