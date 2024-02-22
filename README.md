@@ -1,4 +1,4 @@
-# Voice_Translator
+# Voice Translator
 
 ## This repository contains project created for Speech Technology classes with use of Techmo TSS and EasyNMT.
 
@@ -52,7 +52,7 @@ Due to encountered problems, it is suggested to install independently ffmpeg-pyt
 
 ## Content
 
-This branch contains contains version 1.0.0 of Techmo TTS, EasyNMT and Whisper linked togheter to work as translator with synthesise speech output.
+This branch contains contains version 1.0.1 of Techmo TTS, EasyNMT and Whisper linked togheter to work as translator with synthesise speech output.
 
 Available languages (with abbreviation) for input:
 - English (en)
